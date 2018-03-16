@@ -30,17 +30,17 @@ read filen
 																			        echo
 
         echo XRP High: $(cat /home/leo/CryptoRecordings/$filen | awk -F"," '{if (NR > 1) print$7}' | sort -n | tail -1)
-	        echo XRP Low: $(cat /home/leo/CryptoRecordings/$filen | awk -F"," '{if (NR > 1) print$7}' | sort -n | head -1)
-		        echo XRP Average: $(cat /home/leo/CryptoRecordings/$filen | awk -F"," '{if (NR > 1) print$7}' | awk -F"," '{ XRPsum += $1 } END { print XRPsum / NR }')              
-			        echo
-				        echo DGB High: $(cat /home/leo/CryptoRecordings/$filen | awk -F"," '{if (NR > 1) print$8}' | sort -n | tail -1)
-					        echo DGB Low: $(cat /home/leo/CryptoRecordings/$filen | awk -F"," '{if (NR > 1) print$8}' | sort -n | head -1)
-						        echo DGB Average: $(cat /home/leo/CryptoRecordings/$filen | awk -F"," '{if (NR > 1) print$8}' | awk -F"," '{ DGBsum += $1 } END { print DGBsum / NR }')              
-							        echo
-								        echo XLM High: $(cat /home/leo/CryptoRecordings/$filen | awk -F"," '{if (NR > 1) print$9}' | sort -n | tail -1)
-									        echo XLM Low: $(cat /home/leo/CryptoRecordings/$filen | awk -F"," '{if (NR > 1) print$9}' | sort -n | head -1)
-										        echo XLM Average: $(cat /home/leo/CryptoRecordings/$filen | awk -F"," '{if (NR > 1) print$9}' | awk -F"," '{ DGBsum += $1 } END { print DGBsum / NR }')               
-											        echo
+	echo XRP Low: $(cat /home/leo/CryptoRecordings/$filen | awk -F"," '{if (NR > 1) print$7}' | sort -n | head -1)
+	echo XRP Average: $(cat /home/leo/CryptoRecordings/$filen | awk -F"," '{if (NR > 1) print$7}' | awk -F"," '{ XRPsum += $1 } END { print XRPsum / NR }')              
+	echo
+	echo DGB High: $(cat /home/leo/CryptoRecordings/$filen | awk -F"," '{if (NR > 1) print$8}' | sort -n | tail -1)
+	echo DGB Low: $(cat /home/leo/CryptoRecordings/$filen | awk -F"," '{if (NR > 1) print$8}' | sort -n | head -1)
+	echo DGB Average: $(cat /home/leo/CryptoRecordings/$filen | awk -F"," '{if (NR > 1) print$8}' | awk -F"," '{ DGBsum += $1 } END { print DGBsum / NR }')              
+	echo
+	echo XLM High: $(cat /home/leo/CryptoRecordings/$filen | awk -F"," '{if (NR > 1) print$9}' | sort -n | tail -1)
+	echo XLM Low: $(cat /home/leo/CryptoRecordings/$filen | awk -F"," '{if (NR > 1) print$9}' | sort -n | head -1)
+	echo XLM Average: $(cat /home/leo/CryptoRecordings/$filen | awk -F"," '{if (NR > 1) print$9}' | awk -F"," '{ DGBsum += $1 } END { print DGBsum / NR }')               
+	echo
 echo
 echo
 #File analysis over. Menu to return to menu or analyze new file
