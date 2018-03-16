@@ -1,17 +1,21 @@
 #!/bin/bash
 
+echo Welcome to the Crpto Tracker
+echo Please input the name of your new file.
+read filename
+
 echo How many times would you like to track the price?
-read time
+read count
 
-echo Interval of time between each price recording?
-read minutes
+echo Interval of seconds between each price recording?
+read seconds
 
-echo Date/Time, BTC, ETH, LTC, BCH, DSH, XRP, DGB, XLM > /home/leo/trackingsystem.xls
+echo Date/Time, BTC, ETH, LTC, BCH, DSH, XRP, DGB, XLM > /home/leo/$filename.xls
 
 #Declare variable for line count of tracking system file
-linecount=$(cat /home/leo/trackingsystem.xls| wc -l)
+linecount=$(cat /home/leo/$filename.xls| wc -l)
 
-while [ $linecount -le $time ]
+while [ $linecount -le $count ]
 do
 
         cryptowatch | sed -r "s/\x1B\[([0-9]{1,2}(;[0-9]{1,2})?)?[mGK]//g" | sed "s/\x0f//g" > /home/leo/pricerecord.xls
@@ -26,11 +30,11 @@ do
                 XLMUSD=$(cat pricerecord.xls| awk '{if (NR==11) print$5}')
 
                 #Outlining the output below
-                echo $(date), $BTCUSD, $ETHUSD, $LTCUSD, $BCHUSD, $DSHUSD, $XRPUSD, $DGBUSD, $XLMUSD >> /home/leo/trackingsystem.xls
+                echo $(date), $BTCUSD, $ETHUSD, $LTCUSD, $BCHUSD, $DSHUSD, $XRPUSD, $DGBUSD, $XLMUSD >> /home/leo/$filename.xls
 
                 #Count lines of file 
-                linecount=$(cat /home/leo/trackingsystem.xls| wc -l)
-        sleep $minutes
+                linecount=$(cat /home/leo/$filename.xls| wc -l)
+        sleep $seconds
 done
 
 echo Your file is ready. 
