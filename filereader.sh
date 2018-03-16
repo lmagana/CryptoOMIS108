@@ -9,21 +9,21 @@ echo Please input the name and extension of the file you would like to analyze:
 read filen
 #Calculating High, Low, and Average price of each coin
         echo BTC High: $(cat /home/leo/CryptoRecordings/$filen | awk -F"," '{if (NR > 1) print$2}' | sort -n | tail -1)
-	        echo BTC Low: $(cat /home/leo/CryptoRecordings/$filen | awk -F"," '{if (NR > 1) print$2}' | sort -n | head -1)
-		        echo BTC Average: $(cat /home/leo/CryptoRecordings/$filen | awk -F"," '{if (NR > 1) print$2}' | awk -F"," '{ BTCsum += $1 } END { print BTCsum / NR }')
-			        echo
-				        echo ETH High: $(cat /home/leo/CryptoRecordings/$filen | awk -F"," '{if (NR > 1) print$3}' | sort -n | tail -1)
-					        echo ETH Low: $(cat /home/leo/CryptoRecordings/$filen | awk -F"," '{if (NR > 1) print$3}' | sort -n | head -1)
-						        echo ETH Average: $(cat /home/leo/CryptoRecordings/$filen | awk -F"," '{if (NR > 1) print$3}' | awk -F"," '{ ETHsum += $1 } END { print ETHsum / NR }')
-							        echo
-								        echo LTC High: $(cat /home/leo/CryptoRecordings/$filen | awk -F"," '{if (NR > 1) print$4}' | sort -n | tail -1)
-									        echo LTC Low: $(cat /home/leo/CryptoRecordings/$filen | awk -F"," '{if (NR > 1) print$4}' | sort -n | head -1)
-										        echo LTC Average: $(cat /home/leo/CryptoRecordings/$filen | awk -F"," '{if (NR > 1) print$4}' | awk -F"," '{ LTCsum += $1 } END { print LTCsum / NR }')
-											        echo
-												        echo BCH High: $(cat /home/leo/CryptoRecordings/$filen | awk -F"," '{if (NR > 1) print$5}' | sort -n | tail -1)
-													        echo BCH Low: $(cat /home/leo/CryptoRecordings/$filen | awk -F"," '{if (NR > 1) print$5}' | sort -n | head -1)
-														        echo BCH Average: $(cat /home/leo/CryptoRecordings/$filen | awk -F"," '{if (NR > 1) print$5}' | awk -F"," '{ BCHsum += $1 } END { print BCHsum / NR }')
-															        echo
+	echo BTC Low: $(cat /home/leo/CryptoRecordings/$filen | awk -F"," '{if (NR > 1) print$2}' | sort -n | head -1)
+	echo BTC Average: $(cat /home/leo/CryptoRecordings/$filen | awk -F"," '{if (NR > 1) print$2}' | awk -F"," '{ BTCsum += $1 } END { print BTCsum / NR }')
+	echo
+	echo ETH High: $(cat /home/leo/CryptoRecordings/$filen | awk -F"," '{if (NR > 1) print$3}' | sort -n | tail -1)
+	echo ETH Low: $(cat /home/leo/CryptoRecordings/$filen | awk -F"," '{if (NR > 1) print$3}' | sort -n | head -1)
+	echo ETH Average: $(cat /home/leo/CryptoRecordings/$filen | awk -F"," '{if (NR > 1) print$3}' | awk -F"," '{ ETHsum += $1 } END { print ETHsum / NR }')
+	echo
+	echo LTC High: $(cat /home/leo/CryptoRecordings/$filen | awk -F"," '{if (NR > 1) print$4}' | sort -n | tail -1)
+	echo LTC Low: $(cat /home/leo/CryptoRecordings/$filen | awk -F"," '{if (NR > 1) print$4}' | sort -n | head -1)
+	echo LTC Average: $(cat /home/leo/CryptoRecordings/$filen | awk -F"," '{if (NR > 1) print$4}' | awk -F"," '{ LTCsum += $1 } END { print LTCsum / NR }')
+	echo
+	echo BCH High: $(cat /home/leo/CryptoRecordings/$filen | awk -F"," '{if (NR > 1) print$5}' | sort -n | tail -1)
+	echo BCH Low: $(cat /home/leo/CryptoRecordings/$filen | awk -F"," '{if (NR > 1) print$5}' | sort -n | head -1)
+	echo BCH Average: $(cat /home/leo/CryptoRecordings/$filen | awk -F"," '{if (NR > 1) print$5}' | awk -F"," '{ BCHsum += $1 } END { print BCHsum / NR }')
+	echo
 																        echo DSH High: $(cat /home/leo/CryptoRecordings/$filen | awk -F"," '{if (NR > 1) print$6}' | sort -n | tail -1)
 																	        echo DSH Low: $(cat /home/leo/CryptoRecordings/$filen | awk -F"," '{if (NR > 1) print$6}' | sort -n | head -1)
 																		        echo DSH Average: $(cat /home/leo/CryptoRecordings/$filen | awk -F"," '{if (NR > 1) print$6}' | awk -F"," '{ DSHsum += $1 } END { print DSHsum / NR }')              
